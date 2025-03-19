@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes inicial{
+0%{background: url(imagens/foto-escura.png)fixed;
+    background-position: center center ;
+    background-repeat: no-repeat;
+}
+
+50%{background: url(imagens/foto-muito-clara.png)fixed;
+    background-position: center center ;
+    background-repeat: no-repeat;
+}
+100%{background: url(imagens/foto-final.png)fixed;
+    background-position: center center ;
+    background-repeat: no-repeat;
+   
+}
+}
+
+body{
+    background: url(imagens/foto-final.png)fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: inicial 8s linear;
+}
+
+main{
+    position:absolute;
+    height: 98%;
+    width:98%;
+    background: rgba(0, 0, 0, 0.671);
+}
+
+header{
+    text-align: center;
+    color: white;
+    font-family: orbitron;
+}
+
+header h1{
+    display: inline;
+}
+
+header img{
+    transform: translateY(12px);
+    display: inline;
+    width: 50px;
+}
+.menu {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+.menu p{
+    display: inline;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
