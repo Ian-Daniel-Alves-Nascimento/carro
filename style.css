@@ -2,8 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 @keyframes inicial{
 0%{background: url(imagens/foto-escura.png)scroll;
@@ -22,8 +21,51 @@
 }
 }
 
+@keyframes titulo {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(0px);
+        opacity: 0.5 ;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from { 
+        opacity: 0;
+       transform: translateX(100px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes appear2 {
+    from { 
+        opacity: 0;
+       transform: translateY(100px); 
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+*{
+margin: 0px;
+}
 body{
   background-color: black; 
+}
+
+header, .menu{
+    animation: titulo 2.5s linear;
 }
 
 header{
@@ -47,7 +89,6 @@ header img{
     height: 30px;
     text-align: center;
     color: white;
-    border-bottom: 1px solid white;
 }
 
 .menu a{
@@ -66,25 +107,37 @@ header img{
   color: burlywood;
 }
 .op{
-    position: absolute;
-    transform: translateX(30px);
-    height: 98%;
-    width: 98%;
-    background-color: black; 
+    height: 850px;
+    width: 100%;
+    background-color: black;
+    border-top: 1px solid white; 
 }
 .features{
     display: flex;
     justify-content: center;
     height: 850px;
-    width: 98%;
+    width: 98vw;
+    position: relative;
     margin: auto;
     background: url(imagens/foto-final.png)scroll;
-    opacity: 0.4;
     background-position: center bottom;
     background-repeat: no-repeat;
     animation: inicial 5s linear;
     font-family: orbitron;
     font-size: 0.7em;
+    z-index:1;
+}
+
+.features::after {
+    content: '';
+    height: 850px;
+    width: 98vw;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .4;
+    z-index: -1;
 }
 
 .farol1{
@@ -172,3 +225,96 @@ transform: translateX(-90px);
         transform: translate(280px, -14px);
         border-radius: 15px;
     }
+
+    .segunda{
+        display: block;
+        background-image: url(imagens/HiResPhoto15_1.920-1.080.png);
+        position: relative;
+        background-size: cover;
+        height: 800px;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        border-top: 2px solid white;
+        z-index: 1;
+    }
+
+    .segunda::after {
+        content: '';
+        background-color: black;
+        position: absolute;
+        height: 800px;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    
+    .motor{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin: 60px auto 60px auto;
+        width: 90%;
+        height: 90%;
+        border-radius: 8px 0px;
+        border: 6px rgb(255, 255, 255);
+        border-style: double;
+        box-shadow: inset 0px 0px 30px 20px rgb(0, 0, 0);
+        overflow: hidden;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+    
+    .texto{
+        width: 35%;
+        height: 80%;
+        color: white;
+        font-family: "EB Garamond";
+        font-size: 1.4em;
+        text-align: justify;
+        text-indent: 20px;
+        padding: 30px 10px 0px 10px;
+        border: 1px solid white;
+        align-self: center;
+        margin-right: 60px;
+        border-radius: 10px 0px;
+    }
+    .pegasus{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 50px;
+        padding: 20px;
+        background: linear-gradient(to right, grey, rgb(87, 87, 87));
+        height: 200px;
+        width: 98%;
+        box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.582);
+        animation: appear2 linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 10%;
+    }
+
+    .pegasus .marca {
+        align-self: center;
+        font-family: orbitron;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .marca a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .pegasus div{
+        width: 160px;
+        background: url(imagens/logo.png);
+        background-position: center center;
+        background-size: cover;
+    }
+
+    
+
+    
